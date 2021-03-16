@@ -1,0 +1,83 @@
+@import "mixins";
+
+.date_picker_box_container{
+  height: 100%;
+  .picker_header{
+    grid-column: 1 / 3;
+    height: 30px;
+    background: #EBF0F2;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    grid-template-columns: 1fr 3fr 1fr;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 10;
+    div {
+      &::selection {
+        background: transparent;
+      }
+    }
+    .arrow {
+      @include flex(1);
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+    }
+  }
+  .days_info {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 29px);
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    .day_info{
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      @include flex(1);
+      text-align: center;
+      font-size: 10px;
+      font-weight: bold;
+      &::selection {
+        background: transparent;
+      }
+    }
+  }
+  .days_of_month{
+    display: grid;
+    grid-template-columns: repeat(7, 29px);
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    .date {
+      transition: background-color 0.2s ease;
+      width: 100%;
+      font-size: 14px;
+      padding: 5px 0;
+      @include flex(1);
+      &:hover {
+        background: rgba(97, 119,153,0.4);
+        font-weight: bold;
+        border-radius: 5px;
+      }
+    }
+    .non_current_month{
+      color: #b8b8b8;
+    }
+    .selected {
+      background: #617799;
+      color: white;
+      font-weight: 900;
+      border-radius: 5px;
+      &:hover{
+        background: #617799;
+
+      }
+    }
+  }
+}

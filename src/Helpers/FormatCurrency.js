@@ -1,0 +1,42 @@
+const currencyMapping1 = {
+  GBP: 'en-GB',
+  EUR: 'en-EU',
+  USD: 'en-US',
+  SEK: 'sv-SE',
+  HKD: 'zh-HK',
+  IDR: 'id-ID',
+  ILS: 'he-IL',
+  DKK: 'da-DK',
+  INR: 'hi-IN',
+  CHF: 'de-CH',
+  MXN: 'es-MX',
+  CZK: 'cs-CZ',
+  SGD: 'en-SG',
+  THB: 'th-TH',
+  HRK: 'hr-HR',
+  MYR: 'ms-MY',
+  NOK: 'nb-NO',
+  CNY: 'zh-CN',
+  BGN: 'bg-BG',
+  PHP: 'en-PH',
+  PLN: 'pl-PL',
+  ZAR: 'en-ZA',
+  CAD: 'en-CA',
+  ISK: 'is-IS',
+  BRL: 'pt-BR',
+  RON: 'ro-RO',
+  NZD: 'en-NZ',
+  TRY: 'tr-TR',
+  JPY: 'ja-JP',
+  RUB: 'mhr-RU',
+  KRW: 'ko-KR',
+  HUF: 'hu-HU',
+  AUD: 'en-AU',
+};
+
+export const _formatCurrencyAmount = (currency, amount) =>
+  // currencyMapping[currency].replace('x', amount.toFixed(2));
+  new Intl.NumberFormat(currencyMapping1[currency], {
+    style: 'currency',
+    currency,
+  }).format(amount);

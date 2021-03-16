@@ -1,0 +1,19 @@
+@import "mixins";
+
+.month_select_container{
+  height: 180px;
+  overflow: scroll;
+  .month_select{
+    height: 40px;
+    @include flex(1);
+    transition: 0.2s ease;
+    &:hover{
+      background: #617799;
+      color: white;
+    }
+  }
+  .selected{
+    background: #617799;
+    color: white;
+  }
+}

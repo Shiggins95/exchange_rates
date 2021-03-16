@@ -1,0 +1,79 @@
+@import "mixins";
+
+.popup_bg {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  @include flex(1);
+  .popup_window {
+    background: #EDC7CF;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+
+    .title, .content, .buttons {
+      border-radius: 10px 10px 0 0;
+      width: 100%;
+      height: 100%;
+      @include flex(1);
+    }
+
+    .title {
+      background: #B9314F;
+      color: white;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .content {
+      padding: 0 20px;
+
+      p {
+        text-align: center;
+      }
+    }
+
+    .buttons {
+      @include flex(2);
+
+      button {
+        font-weight: 900;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 25%;
+        background: transparent;
+
+        &:active {
+          transform: translateY(1px);
+        }
+      }
+
+      .confirm {
+        border: 2px solid #3A4F41;
+        color: #3A4F41;
+      }
+
+      .decline {
+        border: 2px solid #B9314F;
+        color: #B9314F;
+      }
+    }
+  }
+
+  .error {
+
+    .title {
+      background: #B9314F;
+    }
+  }
+
+  .confirm {
+    background: #DAFFED;
+
+    .title {
+      background: #3A4F41;
+    }
+  }
+}

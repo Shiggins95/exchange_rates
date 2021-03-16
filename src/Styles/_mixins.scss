@@ -1,0 +1,16 @@
+@mixin flex($type) {
+  display: flex;
+  align-items: center;
+  @if $type == 1 {
+    justify-content: center;
+  }
+  @else if $type == 2 {
+    justify-content: space-evenly;
+  }
+  @else if $type == 3 {
+    justify-content: flex-end;
+  }
+  @else if $type == 4 {
+    justify-content: flex-start;
+  }
+}

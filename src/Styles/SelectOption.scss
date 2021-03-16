@@ -1,0 +1,43 @@
+@import "mixins";
+
+.selected_option {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  //min-width: 75px;
+  .value, .close {
+    padding: 0 10px;
+    height: 20px;
+    width: 100%;
+    @include flex(1);
+  }
+  .close {
+
+  }
+}
+
+.in_menu {
+  height: 30px;
+  align-content: center;
+  justify-items: stretch;
+  font-size: 10px;
+  .value {
+    text-align: left;
+    justify-content: flex-start;
+    background: white;
+  }
+  .close {
+    width: 30px;
+    margin-left: 12px;
+    svg {
+      font-size: 14px;
+    }
+  }
+}
+
+.not_in_menu {
+  height: 20px;
+  background: rgb(170, 255, 148);
+  border: 1px solid #3A4F41;
+  font-size: 14px;
+  color: #3A4F41;
+}

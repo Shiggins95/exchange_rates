@@ -1,0 +1,36 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#present_rates_container, #exchange_rate_calculator {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 5fr;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-gap: 10px;
+  .header{
+    justify-items: center;
+    grid-column: 1 / 4;
+    padding: 20px 0;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
+    .header_text {
+      text-align: center;
+      background: white;
+      grid-column: 2 / 3;
+    }
+    .filters {
+      width: 100%;
+      grid-column: 2 / 3;
+      justify-items: center;
+      .left {
+        width: 75%;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@import "mixins";
+
+#present_rates_container{
+  .rates_table{
+    grid-column: 2 / 3;
+    overflow: scroll;
+    height: 100%;
+  }
+}

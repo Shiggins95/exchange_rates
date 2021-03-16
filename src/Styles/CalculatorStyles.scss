@@ -1,0 +1,47 @@
+@import "mixins";
+
+#exchange_rate_calculator {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 20px;
+  display: grid;
+  //grid-template-columns: 1fr 3fr 1fr;
+  .header {
+    .filters {
+      .left {
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        grid-row-gap: 20px;
+        .text_input_container {
+          grid-column: 2 / 3;
+        }
+      }
+    }
+  }
+  .conversion_results_container{
+    grid-column: 2 / 3;
+    .conversion_title {
+      width: 100%;
+      padding: 20px 0;
+      @include flex(1);
+    }
+    .conversion_content {
+      display: grid;
+      align-content: center;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-flow: row;
+      grid-gap: 10px;
+      div {
+        @include flex(1);
+        flex-direction: column;
+        width: 100%;
+      }
+      div:last-child {
+        height: 200%;
+        font-size: 3em;
+        grid-column: 1 / 3;
+      }
+    }
+
+  }
+}
