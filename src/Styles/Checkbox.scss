@@ -1,0 +1,28 @@
+@import "mixins";
+.checkbox_container {
+  width: 90%;
+  @include flex(1);
+  flex-direction: column;
+  .title {
+    @include flex(2);
+    margin-bottom: 5px;
+    cursor: default;
+    width: 100%;
+    font-size: 12px;
+  }
+  .checkbox {
+    z-index: 10;
+    width: 30px;
+    height: 30px;;
+    border: 1px solid black;
+    cursor: pointer;
+    @include flex(1);
+    background: white;
+    svg {
+      transform: scale(1.2);
+    }
+  }
+  .selected {
+    background: #617799;
+  }
+}
