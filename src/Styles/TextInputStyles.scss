@@ -1,23 +1,21 @@
 @import "mixins";
+@import "variables";
 .text_input_container{
   width: 90%;
   z-index: 10;
-  .title {
-    @include flex(4);
-    margin-bottom: 5px;
-    cursor: default;
-    width: 100%;
-    font-size: 12px;
-  }
+  @include inputTitle;
   input {
+    background: $light_blue;
     height: 30px;
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid $deep_blue;
     //text-align: center;
     padding-left: 10px;
     font-size: 12px;
     vertical-align: baseline;
     z-index: 10;
+    color: $deep_blue;
+    font-weight: 700;
   }
   .disabled {
     background: rgb(224, 224, 224);

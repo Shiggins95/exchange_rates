@@ -1,4 +1,18 @@
+@import "mixins";
+@import "variables";
 .navigation{
   position: fixed;
   top: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 5vh;
+  justify-items: center;
+  align-content: center;
+  background: $deep_blue;
+  color: $light_blue;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }

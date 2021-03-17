@@ -44,6 +44,17 @@ const RatesPage = (props) => {
         );
         return;
       }
+      if (value.getTime() > new Date().getTime()) {
+        dispatch(
+          _setError({
+            error: true,
+            title: 'DATE_IN_FUTURE',
+            message:
+              "Whatcha think I am? A time traveller? If I could get future exchange rates I'd be a forex guru. Get back in the past chump!",
+          }),
+        );
+        return;
+      }
     }
     const dispatchFunction = dispatchMapping[id];
     dispatch(dispatchFunction({ [id]: value }));

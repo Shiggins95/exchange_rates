@@ -1,70 +1,11 @@
 @import "mixins";
+@import "variables";
+
 .dropdown_menu_container {
   width: 90%;
   position: relative;
-  .title {
-    @include flex(4);
-    margin-bottom: 5px;
-    cursor: default;
-    width: 100%;
-    font-size: 12px;
-  }
-  .input_header {
-    z-index: 10;
-    height: 30px;;
-    border: 1px solid black;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    align-content: center;
-    align-items: center;
-    justify-items: center;
-    position: relative;
-    background: white;
-    cursor: pointer;
-    p{
+  @include inputTitle;
+  @include inputHeader;
+  @include ddContent;
 
-      padding-left: 10px;
-      width: 100%;
-      grid-column: 1 / 3;
-      font-size: 12px;
-      cursor: pointer;
-      text-align: left;
-      &::selection {
-        background: transparent;
-      }
-    }
-    svg {
-      position: absolute;
-      grid-column: 2 / 3;
-    }
-  }
-  .content {
-    cursor: pointer;
-    width: 100%;
-    max-height: 200px;
-    position: absolute;
-    overflow: scroll;
-    z-index: 11;
-    background: white;
-    border: 1px solid black;
-    //border-bottom: 1px solid black;
-    //border-right: 1px solid black;
-    .option {
-      @include flex(1);
-      text-align: center;
-      height: 30px;;
-      transition: 0.2s ease;
-      font-size: 10px;
-      &:hover {
-        background: #617799;
-      }
-      &::selection {
-        background: transparent;
-      }
-    }
-    .selected {
-      background: #617799;
-    }
-  }
 }

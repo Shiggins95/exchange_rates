@@ -9,7 +9,7 @@ import RatesPage from './Views/RatesPage_View';
 import Navbar from './Components/Navbar';
 import { _get } from './Helpers/Requests';
 import { _setGlobalCurrencies } from './Redux/Actions/Global_Actions';
-import './App.scss';
+import './Styles/App.scss';
 import Calculator from './Views/Calculator_View';
 import PopupWindow from './Components/PopupWindow';
 import { _setError } from './Redux/Actions/Errors_Actions';
