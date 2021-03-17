@@ -1,6 +1,9 @@
 @import "mixins";
+@import "variables";
 
 #present_rates_container{
+  padding-top: 5vh;
+  overflow: scroll;
   .rates_table{
     grid-column: 2 / 3;
     overflow: scroll;

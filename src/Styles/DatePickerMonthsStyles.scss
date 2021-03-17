@@ -1,4 +1,5 @@
 @import "mixins";
+@import "variables";
 
 .month_select_container{
   height: 180px;
@@ -7,13 +8,14 @@
     height: 40px;
     @include flex(1);
     transition: 0.2s ease;
+    color: $deep_blue;
+    font-weight: 700;
     &:hover{
-      background: #617799;
-      color: white;
+      background: $overlay;
     }
   }
   .selected{
-    background: #617799;
-    color: white;
+    background: $deep_blue;
+    color: $light_blue;
   }
 }

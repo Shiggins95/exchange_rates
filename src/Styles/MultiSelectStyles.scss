@@ -1,25 +1,12 @@
 @import "mixins";
+@import "variables";
 
 .multiple_select_container {
   width: 90%;
   position: relative;
-  .title {
-    @include flex(4);
-    margin-bottom: 5px;
-    cursor: default;
-    width: 100%;
-    font-size: 12px;
-  }
+  @include inputTitle;
+  @include inputHeader;
   .header {
-    z-index: 10;
-    height: 30px;;
-    border: 1px solid black;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 30px;
-    position: relative;
-    background: white;
-    cursor: pointer;
     .values {
       overflow: scroll;
       width: 100%;
@@ -49,7 +36,6 @@
     position: absolute;
     overflow: scroll;
     z-index: 10;
-    background: white;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
     border-right: 1px solid black;

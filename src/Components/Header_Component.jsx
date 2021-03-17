@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
 import DropDownMenu from './Inputs/DropDownMenu';
 import DatePicker from './DatePicker/DatePicker';
 import Checkbox from './Inputs/Checkbox';

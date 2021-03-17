@@ -1,11 +1,12 @@
 @import "mixins";
+@import "variables";
 
 .date_picker_box_container{
   height: 100%;
   .picker_header{
     grid-column: 1 / 3;
     height: 30px;
-    background: #EBF0F2;
+    background: $deep_blue;
     display: grid;
     justify-items: center;
     align-items: center;
@@ -14,6 +15,7 @@
     font-size: 14px;
     font-weight: bold;
     z-index: 10;
+    color: $light_blue;
     div {
       &::selection {
         background: transparent;
@@ -35,6 +37,7 @@
     justify-items: center;
     justify-content: center;
     align-content: center;
+    color: $deep_blue;
     .day_info{
       width: 100%;
       margin: 0;
@@ -55,29 +58,27 @@
     justify-content: center;
     align-content: center;
     .date {
+      font-weight: 700;
+      color: $deep_blue;
       transition: background-color 0.2s ease;
       width: 100%;
       font-size: 14px;
       padding: 5px 0;
       @include flex(1);
       &:hover {
-        background: rgba(97, 119,153,0.4);
+        background: $overlay;
         font-weight: bold;
         border-radius: 5px;
+        //color: $light_blue;
       }
     }
     .non_current_month{
-      color: #b8b8b8;
+      color: $dark_blue;
     }
     .selected {
-      background: #617799;
-      color: white;
-      font-weight: 900;
+      background: $deep_blue;
+      color: $light_blue;
       border-radius: 5px;
-      &:hover{
-        background: #617799;
-
-      }
     }
   }
 }
