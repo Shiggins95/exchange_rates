@@ -44,8 +44,12 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route exact path="/" component={RatesPage} />
-          <Route exact path="/exchange" component={Calculator} />
+          <Route exact path="/exchangerates" component={RatesPage} />
+          <Route
+            exact
+            path="/exchangerates/exchange"
+            component={Calculator}
+          />
         </Switch>
         <PopupWindow />
       </Router>

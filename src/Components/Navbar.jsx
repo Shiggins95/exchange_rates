@@ -7,8 +7,10 @@ const Navbar = () => {
   const i = 0;
   return (
     <div className="navigation">
-      <Link to="/">Exchange Rates</Link>
-      <Link to="/exchange">Exchange Rate Calculator</Link>
+      <Link to="/exchangerates/">Exchange Rates</Link>
+      <Link to="/exchangerates/exchange">
+        Exchange Rate Calculator
+      </Link>
     </div>
   );
 };
