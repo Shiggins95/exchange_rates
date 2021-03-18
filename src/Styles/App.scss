@@ -48,3 +48,27 @@ h1, h2, h3, p {
     background: $deep_blue;
   }
 }
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 26px;
+  }
+  h2 {
+    font-size: 14px;
+  }
+  p {
+    font-size: 10px;
+  }
+  #present_rates_container, #exchange_rate_calculator {
+    grid-template-columns: 0 1fr 0;
+    .header {
+      grid-template-columns: 0 1fr 0;
+      .filters {
+        grid-column: 1 / 4;
+        .left {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
