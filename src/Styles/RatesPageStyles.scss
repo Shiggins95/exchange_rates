@@ -2,11 +2,17 @@
 @import "variables";
 
 #present_rates_container{
-  padding-top: 5vh;
+  padding: 5vh 0;
   overflow: scroll;
   .rates_table{
     grid-column: 2 / 3;
     overflow: scroll;
     height: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  #present_rates_container {
+    padding-top: 7.5vh;
   }
 }

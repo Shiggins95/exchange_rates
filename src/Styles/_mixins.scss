@@ -69,10 +69,9 @@
     max-height: 200px;
     position: absolute;
     overflow: scroll;
-    z-index: 11;
+    z-index: 12;
     border: 1px solid $deep_blue;
-    //border-bottom: 1px solid black;
-    //border-right: 1px solid black;
+    border-bottom: 2px solid $deep_blue;
     .option {
       font-weight: 700;
       @include flex(1);
@@ -93,3 +92,4 @@
     }
   }
 }
+
