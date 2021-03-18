@@ -9,3 +9,11 @@
   @include ddContent;
 
 }
+
+@media (max-width: 768px) {
+    .dropdown_menu_container {
+      .content {
+        //max-height: 150px;
+      }
+    }
+}
