@@ -6,6 +6,7 @@ const {
   SET_FILTER_EXCHANGE_DATE,
   SET_FILTER_TARGET_CURRENCY,
   SET_FILTER_EXCHANGE_AMOUNT,
+  RESET_FILTERS,
 } = actionTypes;
 
 export const _setFilterBaseCurrency = (payload) => ({
@@ -29,4 +30,7 @@ export const _setFilterExchangeDate = (payload) => ({
 export const _setFilterExchangeAmount = (payload) => ({
   type: SET_FILTER_EXCHANGE_AMOUNT,
   payload,
+});
+export const _resetFilters = () => ({
+  type: RESET_FILTERS,
 });

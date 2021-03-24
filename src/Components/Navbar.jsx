@@ -6,7 +6,10 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useSpring, animated } from 'react-spring';
 import { useDispatch } from 'react-redux';
 import useCheckMobileScreen from '../Helpers/IsMobile';
-import { _setFilterOpenFilter } from '../Redux/Actions/Filters_Actions';
+import {
+  _resetFilters,
+  _setFilterOpenFilter,
+} from '../Redux/Actions/Filters_Actions';
 
 const Navbar = () => {
   const [display, setDisplay] = useState(false);
@@ -22,6 +25,7 @@ const Navbar = () => {
     if (isMobile) {
       setDisplay(displayToSet);
     }
+    dispatch(_resetFilters());
     dispatch(_setFilterOpenFilter(''));
   };
 
