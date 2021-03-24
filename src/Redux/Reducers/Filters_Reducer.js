@@ -6,6 +6,7 @@ const {
   SET_FILTER_TARGET_CURRENCY,
   SET_FILTER_EXCHANGE_DATE,
   SET_FILTER_EXCHANGE_AMOUNT,
+  RESET_FILTERS,
 } = actionTypes;
 const startingState = {
   openFilter: '',
@@ -29,6 +30,8 @@ const FiltersReducer = (state = startingState, action) => {
       return { ...state, exchangeDate: payload.exchangeDate };
     case SET_FILTER_EXCHANGE_AMOUNT:
       return { ...state, exchangeAmount: payload.exchangeAmount };
+    case RESET_FILTERS:
+      return { ...startingState };
     default:
       return { ...state };
   }
