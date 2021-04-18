@@ -35,7 +35,7 @@ const currencyMapping1 = {
 };
 
 export const _formatCurrencyAmount = (currency, amount) =>
-  // currencyMapping[currency].replace('x', amount.toFixed(2));
+  // eslint-disable-next-line implicit-arrow-linebreak
   new Intl.NumberFormat(currencyMapping1[currency], {
     style: 'currency',
     currency,

@@ -42,9 +42,7 @@ const Header = ({
       </div>
       <div className="filters">
         <div className="left">
-          {filters.map((filter) =>
-            renderInput(filter, _generateUniqueKey(filter.id)),
-          )}
+          {filters.map((filter) => renderInput(filter, _generateUniqueKey(filter.id)))}
           {showAmount && (
             <TextInput
               selectedValue={amount}

@@ -8,8 +8,7 @@ import '../Styles/RatesTableStyles.scss';
 import { _formatCurrencyAmount } from '../Helpers/FormatCurrency';
 import { _setError } from '../Redux/Actions/Errors_Actions';
 
-const RatesTable = ({ scrollRef }) => {
-  const titleRef = createRef();
+const RatesTable = () => {
   const [rates, setRates] = useState(null);
   const [currentSort, setCurrentSort] = useState('');
   const { baseCurrency, exchangeDate } = useSelector(
@@ -18,58 +17,42 @@ const RatesTable = ({ scrollRef }) => {
   const dispatch = useDispatch();
 
   const sortCurrencies = (type) => {
-    debugger;
     let newRatesArray = [];
+    // go through each exchange rate and add to rates array to be sorted
     Object.keys(rates).forEach((rate) => {
       newRatesArray.push({
         rate,
         amount: rates[rate],
       });
     });
-    newRatesArray = newRatesArray.sort((rate1, rate2) =>
-      currentSort === type
-        ? rate1.amount - rate2.amount
-        : rate2.amount - rate1.amount,
-    );
+    // sort array. if the sort type is the current sort type then sort in reverse order
+    newRatesArray = newRatesArray.sort((rate1, rate2) => (currentSort === type
+      ? rate1.amount - rate2.amount
+      : rate2.amount - rate1.amount
+    ));
 
+    // put together new rates object to keep format of data uniform
     const newRates = {};
     newRatesArray.forEach(({ rate, amount }) => {
       newRates[rate] = amount;
     });
 
+    // reset sort if necessary
     if (type === currentSort) {
       setCurrentSort('');
     } else {
       setCurrentSort(type);
     }
+    // update rates
     setRates(newRates);
   };
 
   useEffect(() => {
-    // const options = {
-    //   enableHighAccuracy: true,
-    //   timeout: 5000,
-    //   maximumAge: 0,
-    // };
-
-    // function success(pos) {
-    //   console.log('POS: ', pos);
-    //   const crd = pos.coords;
-    //
-    //   console.log('Your current position is:');
-    //   console.log(`Latitude : ${crd.latitude}`);
-    //   console.log(`Longitude: ${crd.longitude}`);
-    //   console.log(`More or less ${crd.accuracy} meters.`);
-    // }
-    //
-    // function e(err) {
-    //   console.warn(`ERROR(${err.code}): ${err.message}`);
-    // }
-    //
-    // navigator.geolocation.getCurrentPosition(success, e, options);
+    // get initial currencies
     _get(
       `/${_formatDateForRequest(exchangeDate)}?base=${baseCurrency}`,
     ).then((response) => {
+      // if error, display error popup message
       if (response.error) {
         dispatch(
           _setError({
@@ -124,7 +107,7 @@ const RatesTable = ({ scrollRef }) => {
 };
 
 RatesTable.propTypes = {
-  scrollRef: PropTypes.object.isRequired,
+
 };
 
 export default RatesTable;

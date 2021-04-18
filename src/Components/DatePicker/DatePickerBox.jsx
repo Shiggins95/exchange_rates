@@ -46,18 +46,16 @@ const DatePickerBox = ({ handleSelection, selectedValue }) => {
    * easy function to return the first day of current month
    * @return {Date}
    */
-  const getFirstDateOfMonth = () =>
-    new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+  const getFirstDateOfMonth = () => new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
   /**
    * easy function to return the last day of current month
    * @return {Date}
    */
-  const getLastDateOfMonth = () =>
-    new Date(
-      currentDate.getFullYear(),
-      currentDate.getMonth() + 1,
-      0,
-    );
+  const getLastDateOfMonth = () => new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth() + 1,
+    0,
+  );
   /**
    * function to populate the days to render in the current month
    * @return {void}

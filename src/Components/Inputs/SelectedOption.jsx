@@ -7,7 +7,9 @@ import {
   faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons';
 
-const SelectedOption = ({ text, value, onRemove, inMenu }) => {
+const SelectedOption = ({
+  text, value, onRemove, inMenu,
+}) => {
   const removeItem = (closeMenu) => {
     onRemove(value, closeMenu);
   };

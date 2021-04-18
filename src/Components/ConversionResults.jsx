@@ -64,8 +64,8 @@ const ConversionResults = (props) => {
         <div className="field">
           <h2>Exchange Amount</h2>
           <p>
-            {_formatCurrencyAmount(baseCurrency, exchangeAmount) ||
-              _formatCurrencyAmount(baseCurrency, 0)}
+            {_formatCurrencyAmount(baseCurrency, exchangeAmount)
+              || _formatCurrencyAmount(baseCurrency, 0)}
           </p>
         </div>
         <div className="field result">

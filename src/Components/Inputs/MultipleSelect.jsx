@@ -134,8 +134,8 @@ const MultiSelect = ({
             </div>
           </div>
           <div className="options">
-            {inputType === 'text' &&
-              selectedValue.map(({ text }, index) => (
+            {inputType === 'text'
+              && selectedValue.map(({ text }, index) => (
                 <SelectedOption
                   onRemove={onRemove}
                   text={text}

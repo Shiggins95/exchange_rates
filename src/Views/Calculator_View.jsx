@@ -100,7 +100,8 @@ const Calculator = (props) => {
     ),
     tag: (
       <p>
-        Powered by{' '}
+        Powered by
+        {' '}
         <a
           href="https://ratesapi.io/"
           target="_blank"

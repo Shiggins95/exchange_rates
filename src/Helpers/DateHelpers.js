@@ -36,5 +36,4 @@ export const _formatDateForRequest = (date) => {
   return `${years}-${months}-${days}`;
 };
 
-export const _getYearsBetweenDates = (date) =>
-  new Date().getFullYear() - date.getFullYear();
+export const _getYearsBetweenDates = (date) => new Date().getFullYear() - date.getFullYear();
