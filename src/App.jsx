@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import RatesPage from './Views/RatesPage_View';
@@ -16,10 +17,6 @@ import { _setError } from './Redux/Actions/Errors_Actions';
 
 function App() {
   const dispatch = useDispatch();
-  const [{ error, message }, setError] = useState({
-    error: false,
-    message: '',
-  });
 
   useEffect(() => {
     _get('/latest?base=GBP').then((response) => {
@@ -49,6 +46,10 @@ function App() {
             exact
             path="/exchangerates/exchange"
             component={Calculator}
+          />
+          <Route
+            path="/*"
+            render={() => <Redirect to="/exchangerates" />}
           />
         </Switch>
         <PopupWindow />
